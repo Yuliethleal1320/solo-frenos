@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Iniciar sesión | Solo Frenos</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="login">
+<div class="lbox">
+  <a href="index.html"><img src="img/logo.png" alt="Solo Frenos El Mechudo"></a>
+  <small>Sistemas de seguridad automotriz</small>
+  <form class="lcard" id="f">
+    <h2>Bienvenido al Panel</h2><p>Ingrese sus credenciales para acceder</p>
+    <div class="err" id="err" hidden></div>
+    <label for="u">Usuario</label><input id="u" placeholder="admin_taller" autocomplete="username" required>
+    <label for="p">Contraseña</label><input id="p" type="password" placeholder="••••••••" autocomplete="current-password" required>
+    <label style="display:flex;gap:8px;align-items:center;font-size:.8rem"><input id="r" type="checkbox" style="width:auto"> Recordar mi sesión</label>
+    <button class="btn">Iniciar Sesión ➔</button>
+  </form>
+  <p class="hint">Demo: admin_taller / admin123 &nbsp;·&nbsp; <a href="index.html" style="color:var(--red)">Volver al inicio</a></p>
+</div>
+<script src="js/store.js"></script>
+<script>
+if (Auth.current()) location.replace('admin.html');
+document.getElementById('f').onsubmit = e => {
+  e.preventDefault();
+  const ok = Auth.login(u.value.trim(), p.value, r.checked);
+  if (ok) return location.href = 'admin.html';
+  err.textContent = 'Usuario o contraseña incorrectos.'; err.hidden = false;
+};
+</script>
+</body>
+</html>

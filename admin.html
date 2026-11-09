@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Panel administrativo | Solo Frenos</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><b>Taller Solo Frenos</b><small>Panel Administrativo</small></div>
+    <nav id="nav">
+      <a href="#inicio" data-k="inicio">📊 Inicio</a>
+      <a href="#inventario" data-k="inventario">📦 Inventario</a>
+      <a href="#ventas" data-k="ventas">🧾 Ventas / Tickets</a>
+      <a href="#clientes" data-k="clientes">👥 Clientes</a>
+      <a href="#movimientos" data-k="movimientos">📋 Movimientos</a>
+      <a href="#reportes" data-k="reportes">📈 Reportes</a>
+      <a class="btn" href="#nuevo" data-k="nuevo">+ Nuevo Ticket</a>
+    </nav>
+    <div class="me"><b id="uname"></b><small>Sesión activa</small><a href="#" id="out">↪ Cerrar Sesión</a></div>
+  </aside>
+  <div class="content">
+    <header class="top"><h1 id="title"></h1></header>
+    <main id="main"></main>
+  </div>
+</div>
+<script src="js/store.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
